@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
+		<link rel="preconnect" href="https://font.gstatic.com/" crossorigin>
+
+		<title>🐝 Family Photos</title>
+		<meta charset="utf-8" />
+		<meta name="author" content="Joshua Bee" />
+		<meta name="description" content="🐝 Family Photos" />
+		<!-- Let browser know website is optimized for mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="icon" type="image/png" href="images/logos/logo-192.png" />
+		<link rel="apple-touch-icon" href="images/logos/logo-192.png">
+		<link rel="canonical" href="https://photos.joshuabee.dev/" />
+
+		<!-- Progressive Web App -->
+		<meta name="theme-color" content="#E0AAFF" />
+		<link rel="manifest" href="manifest.json" />
+
+		<!-- Settings -->
+		<link href="styles/1-settings/color.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+		<!-- Generic -->
+		<link href="styles/3-generic/reset.css" rel="stylesheet" />
+
+		<!-- Elements -->
+		<link href="styles/4-elements/body.css" rel="stylesheet" />
+		<link href="styles/4-elements/main.css" rel="stylesheet" />
+		
+		<!-- Components -->
+		<link href="styles/6-components/button.css" rel="stylesheet" />
+		<link href="styles/6-components/footer.css" rel="stylesheet" />
+		<link href="styles/6-components/grid.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<main class="grid">
+			<div class="grid-sizer"></div>
+
+			<div class="grid-item" data-width="2">
+				<img src="images/photos/2021/06/20/1.jpg" class="grid-item-photo" />
+				<div class="photo-overlay">
+					<span class="photo-overlay-text">20th June 2021</span>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<img src="images/photos/2021/06/10/1.jpg" class="grid-item-photo" />
+				<div class="photo-overlay">
+					<span class="photo-overlay-text">10th June 2021</span>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<img src="images/photos/2021/06/03/1.jpg" class="grid-item-photo" />
+				<div class="photo-overlay">
+					<span class="photo-overlay-text">3rd June 2021</span>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<img src="images/photos/2021/05/31/1.jpg" class="grid-item-photo" />
+				<div class="photo-overlay">
+					<span class="photo-overlay-text">31st May 2021</span>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<img src="images/photos/2021/05/26/1.jpg" class="grid-item-photo" />
+				<div class="photo-overlay">
+					<span class="photo-overlay-text">26th May 2021</span>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<img src="images/photos/2021/05/24/1.jpg" class="grid-item-photo" />
+				<div class="photo-overlay">
+					<span class="photo-overlay-text">24th May 2021</span>
+				</div>
+			</div>
+
+			<div class="grid-item">
+				<img src="images/photos/2021/05/17/1.jpg" class="grid-item-photo" />
+				<div class="photo-overlay">
+					<span class="photo-overlay-text">17th May 2021</span>
+				</div>
+			</div>
+
+			<div class="grid-item" data-width="2">
+				<img src="images/photos/2021/05/08/1.jpg" class="grid-item-photo" />
+				<div class="photo-overlay">
+					<span class="photo-overlay-text">8th May 2021</span>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<a href="https://joshuabee.dev/" target="_blank" rel="noopener noreferrer" class="footer__branding" itemscope itemtype="https://schema.org/WebSite">
+				<picture>
+					<source srcset="images/logos/company-logo-192.svg" type="image/svg+xml">
+					<img src="images/logos/company-logo-192.png" alt="Company Logo" class="footer__logo" />
+				</picture>
+				<span class="footer__title">Joshua<br />Bee</span>
+			</a>
+
+			<button id="install" type="button" class="button install-button" aria-hidden="true">
+				<span class="button__text">Install</span>
+			</button>
+		</footer>
+
+		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<!-- Main Javascript -->
+		<script src="scripts/main.js"></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+			  navigator.serviceWorker.register('/service-worker.js')
+			  .then(function(registration) {
+				console.log('Service worker registration successful, scope is:', registration.scope);
+			  })
+			  .catch(function(error) {
+				console.log('Service worker registration failed, error:', error);
+			  });
+			}
+		</script>
+	</body>
+</html>
