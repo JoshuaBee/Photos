@@ -1,0 +1,34 @@
+/*--------------------------------//
+//                                //
+//             Color              //
+//                                //
+//--------------------------------*/
+:root {
+	/*
+		Primary Color
+	*/
+	--color-primary: #E0AAFF;
+	--color-primary-text: #000;
+	
+	/*
+		Background
+	*/
+	--color-background: #10002B;
+	--color-background-text: #FFF;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		/*
+			Primary Color
+		*/
+		--color-primary: #10002B;
+		--color-primary-text: #FFF;
+		
+		/*
+			Background
+		*/
+		--color-background: #E0AAFF;
+		--color-background-text: #000;
+	}
+}
