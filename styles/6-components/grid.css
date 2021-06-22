@@ -32,6 +32,7 @@
 }
 
 .photo-overlay-text {
+	color: #FFF;
     font-size: 1rem;
     left: 50%;
 	position: absolute;
