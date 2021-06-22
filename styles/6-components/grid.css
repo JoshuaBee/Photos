@@ -5,11 +5,16 @@
 //--------------------------------*/
 .grid-item,
 .grid-sizer {
+	position: relative;
 	width: calc(100% / 2);
 }
 
 .grid-item[data-width="2"] {
 	width: calc(2 * 100% / 2);
+}
+
+.grid-item[aria-hidden="true"] {
+	visibility: hidden;
 }
 
 .grid-item-photo {

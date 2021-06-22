@@ -1,0 +1,11 @@
+/*--------------------------------//
+//                                //
+//            Observer            //
+//                                //
+//--------------------------------*/
+#observer {
+	bottom: 0;
+	height: 1px;
+	position: absolute;
+	width: 1px;
+}

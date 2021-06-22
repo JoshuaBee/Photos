@@ -33,6 +33,7 @@
 		<link href="styles/6-components/button.css" rel="stylesheet" />
 		<link href="styles/6-components/footer.css" rel="stylesheet" />
 		<link href="styles/6-components/grid.css" rel="stylesheet" />
+		<link href="styles/6-components/observer.css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -40,61 +41,7 @@
 		<main class="grid">
 			<div class="grid-sizer"></div>
 
-			<div class="grid-item" data-width="2">
-				<img src="images/photos/2021/06/20/1.jpg" class="grid-item-photo" />
-				<div class="photo-overlay">
-					<span class="photo-overlay-text">20th June 2021</span>
-				</div>
-			</div>
-
-			<div class="grid-item">
-				<img src="images/photos/2021/06/10/1.jpg" class="grid-item-photo" />
-				<div class="photo-overlay">
-					<span class="photo-overlay-text">10th June 2021</span>
-				</div>
-			</div>
-
-			<div class="grid-item">
-				<img src="images/photos/2021/06/03/1.jpg" class="grid-item-photo" />
-				<div class="photo-overlay">
-					<span class="photo-overlay-text">3rd June 2021</span>
-				</div>
-			</div>
-
-			<div class="grid-item">
-				<img src="images/photos/2021/05/31/1.jpg" class="grid-item-photo" />
-				<div class="photo-overlay">
-					<span class="photo-overlay-text">31st May 2021</span>
-				</div>
-			</div>
-
-			<div class="grid-item">
-				<img src="images/photos/2021/05/26/1.jpg" class="grid-item-photo" />
-				<div class="photo-overlay">
-					<span class="photo-overlay-text">26th May 2021</span>
-				</div>
-			</div>
-
-			<div class="grid-item">
-				<img src="images/photos/2021/05/24/1.jpg" class="grid-item-photo" />
-				<div class="photo-overlay">
-					<span class="photo-overlay-text">24th May 2021</span>
-				</div>
-			</div>
-
-			<div class="grid-item">
-				<img src="images/photos/2021/05/17/1.jpg" class="grid-item-photo" />
-				<div class="photo-overlay">
-					<span class="photo-overlay-text">17th May 2021</span>
-				</div>
-			</div>
-
-			<div class="grid-item" data-width="2">
-				<img src="images/photos/2021/05/08/1.jpg" class="grid-item-photo" />
-				<div class="photo-overlay">
-					<span class="photo-overlay-text">8th May 2021</span>
-				</div>
-			</div>
+			<div id="observer"></div>
 		</main>
 
 		<footer>
@@ -112,6 +59,7 @@
 		</footer>
 
 		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 		<!-- Main Javascript -->
 		<script src="scripts/main.js"></script>
 		<script>
