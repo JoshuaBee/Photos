@@ -1,42 +1,42 @@
 const photos = [
 	{
 		"date": "20th June 2021",
-		"file": "images/photos/2021/06/20/1.jpg",
+		"file": "images/photos/2021/06/20/1000.jpg",
 		"orientation": "landscape",
 	},
 	{
 		"date": "10th June 2021",
-		"file": "images/photos/2021/06/10/1.jpg",
+		"file": "images/photos/2021/06/10/1000.jpg",
 		"orientation": "portrait",
 	},
 	{
 		"date": "3rd June 2021",
-		"file": "images/photos/2021/06/03/1.jpg",
+		"file": "images/photos/2021/06/03/1000.jpg",
 		"orientation": "portrait",
 	},
 	{
 		"date": "31st May 2021",
-		"file": "images/photos/2021/05/31/1.jpg",
+		"file": "images/photos/2021/05/31/1000.jpg",
 		"orientation": "portrait",
 	},
 	{
 		"date": "26th May 2021",
-		"file": "images/photos/2021/05/26/1.jpg",
+		"file": "images/photos/2021/05/26/1000.jpg",
 		"orientation": "portrait",
 	},
 	{
 		"date": "24th May 2021",
-		"file": "images/photos/2021/05/24/1.jpg",
+		"file": "images/photos/2021/05/24/1000.jpg",
 		"orientation": "portrait",
 	},
 	{
 		"date": "17th May 2021",
-		"file": "images/photos/2021/05/17/1.jpg",
+		"file": "images/photos/2021/05/17/1000.jpg",
 		"orientation": "portrait",
 	},
 	{
 		"date": "8th May 2021",
-		"file": "images/photos/2021/05/08/1.jpg",
+		"file": "images/photos/2021/05/08/1000.jpg",
 		"orientation": "landscape",
 	},
 ];
