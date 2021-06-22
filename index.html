@@ -34,6 +34,7 @@
 		<link href="styles/6-components/footer.css" rel="stylesheet" />
 		<link href="styles/6-components/grid.css" rel="stylesheet" />
 		<link href="styles/6-components/observer.css" rel="stylesheet" />
+		<link href="styles/6-components/snackbar.css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -42,6 +43,18 @@
 			<div class="grid-sizer"></div>
 
 			<div id="observer"></div>
+
+			<div id="snackbar" class="snackbar" aria-hidden="true">
+				<span class="snackbar__text">Install App</span>
+				<div class="snackbar__actions">
+					<div id="snackbar-action" class="snackbar__action button">
+						<span class="button__text">Install</span>
+					</div><!-- button -->
+					<div id="snackbar-close" class="snackbar__close button">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+					</div><!-- button -->
+				</div><!-- snackbar__actions -->
+			</div><!-- snackbar -->
 		</main>
 
 		<footer>

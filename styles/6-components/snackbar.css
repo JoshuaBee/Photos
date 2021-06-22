@@ -1,0 +1,74 @@
+/*--------------------------------//
+//                                //
+//            Snackbar            //
+//                                //
+//--------------------------------*/
+.snackbar {
+	position: fixed;
+	transform: translate(-50%, -50%);
+    left: 50%;
+	bottom: -5em;
+	min-width: 20em;
+	width: 50%;
+	min-height: 3em;
+	
+	background-color: #000;
+	background-color: var(--color-background);
+	color: #FFF;
+	color: var(--color-background-text);
+	
+	align-content: center;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.25em;
+	
+	transition: bottom 1s ease;
+
+	z-index: 6;
+	box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.snackbar__text {
+	padding: 0 1em;
+	margin-right: auto;
+}
+
+.snackbar__actions {
+	display: flex;
+	margin-right: 1em;
+}
+
+.snackbar__actions .button {
+	color: #000;
+	color: var(--color-primary-text);
+}
+
+.snackbar__actions .button::before {
+	background-color: #E0AAFF;
+	background-color: var(--color-primary);
+}
+
+.snackbar__close {
+	padding: 0;
+	border-radius: 25em;
+	min-width: 2.25em;
+}
+
+.snackbar__close svg {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+	top: 50%;
+	fill: #000;
+	fill: var(--color-primary-text);
+}
+
+.snackbar__close::before {
+	border-radius: 25em;
+}
+
+.snackbar[aria-hidden="false"] {
+	bottom: 1em;
+}

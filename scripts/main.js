@@ -111,19 +111,19 @@ const photos = [
 		'date': 'April 10, 2021',
 		'description': 'Family nap',
 		'file': '2021/04/10/1000.jpg',
-		'orientation': orientations.LANDSCAPE,
+		'orientation': orientations.PORTRAIT,
 	},
 	{
 		'date': 'April 8, 2021',
 		'description': 'Playing with 2 Filberts',
 		'file': '2021/04/08/1000.jpg',
-		'orientation': orientations.LANDSCAPE,
+		'orientation': orientations.PORTRAIT,
 	},
 	{
 		'date': 'April 7, 2021',
 		'description': 'Preparing our rice for dinner',
 		'file': '2021/04/07/1000.jpg',
-		'orientation': orientations.LANDSCAPE,
+		'orientation': orientations.PORTRAIT,
 	},
 	{
 		'date': 'April 3, 2021',
@@ -250,9 +250,12 @@ const photos = [
 // Constant Elements
 const $grid = document.querySelector('main.grid');
 const $observer = document.querySelector('#observer');
+const $snackbar = document.querySelector('#snackbar');
+const $snackbarAction = $snackbar.querySelector('#snackbar-action');
+const $snackbarClose = $snackbar.querySelector('#snackbar-close');
 
 // Variable Elements
-var $gridItems = [];
+let $gridItems = [];
 
 // Constants
 const msnry = new Masonry($grid, {
@@ -263,15 +266,35 @@ const msnry = new Masonry($grid, {
 const photosPerPage = 10;
 
 // Variables
-var currentPage = 1;
-var deferredPrompt;
+let appInstalled = true
+let appStandalone = false;
+let currentPage = 1;
+let deferredPrompt;
+let snackbarOpen = true;
 
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', () => {
 
 	let observer = new IntersectionObserver(loadMorePhotos, {});
 	observer.observe($observer);
 
 	loadPhotos();
+
+	$snackbarClose.addEventListener('click', (event) => {
+		snackbarOpen = false;
+		$snackbar.ariaHidden = true;
+	});
+	
+	if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+		console.log('display-mode is standalone');
+		appStandalone = true;
+	}
+
+	window.addEventListener('scroll', () => {
+		// Open snackbar upon scroll
+		if (!appInstalled && !appStandalone && snackbarOpen) {
+			$snackbar.ariaHidden = false;
+		}
+	})
 });
 
 function loadPhotos() {
@@ -300,7 +323,7 @@ function loadMorePhotos(entries, observer) {
 }
 
 function showPhotos() {
-	var $photos = $grid.querySelectorAll('.grid-item[aria-hidden="true"]');
+	let $photos = $grid.querySelectorAll('.grid-item[aria-hidden="true"]');
 	$photos.forEach($photo => {
 		$photo.ariaHidden = false;
 	});
@@ -337,6 +360,9 @@ function createPhotoElement(photo) {
 // https://developers.google.com/web/ilt/pwa/lab-offline-quickstart#52_activating_the_install_prompt
 window.addEventListener('beforeinstallprompt', (event) => {
 
+	// The application is not installed
+	appInstalled = false;
+
 	// Prevent Chrome 67 and earlier from automatically showing the prompt
 	event.preventDefault();
 
@@ -344,7 +370,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
 	deferredPrompt = event;
 
 	// Attach the install prompt to a user gesture
-	document.getElementById('install').addEventListener('click', (event) => {
+	$snackbarAction.addEventListener('click', (event) => {
 
 		// Show the prompt
 		deferredPrompt.prompt();
@@ -360,12 +386,12 @@ window.addEventListener('beforeinstallprompt', (event) => {
 			deferredPrompt = null;
 		});
 	});
-
-	document.getElementById('install').setAttribute('aria-hidden', false);
 });
 
 // When the app is installed it should remove the install snackbar
 window.addEventListener('appinstalled', (event) => {
 	console.log('a2hs installed');
-	document.getElementById('install').setAttribute('aria-hidden', true);
+	appInstalled = true;
+	appStandalone = true;
+	$snackbarAction.ariaHidden = true;
 });
