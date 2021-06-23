@@ -1,3 +1,6 @@
+const version = "1.11";
+const cacheName = "jb-${version}";
+
 const orientations = {
 	PORTRAIT: 1,
 	LANDSCAPE: 2,
@@ -250,7 +253,6 @@ const photos = [
 photos.sort((a, b) => {
 	return new Date(b.date) - new Date(a.date);
 });
-window.photos = photos;
 
 // Preload first 5 photos
 photos.slice(0, 5).forEach(photo => {
@@ -259,6 +261,10 @@ photos.slice(0, 5).forEach(photo => {
 	$link.as = 'image';
 	$link.href = `images/photos/${ photo.file }`;
 	document.querySelector('head').appendChild($link);
+})
+
+caches.open(cacheName).then(cache => {
+	return cache.addAll(photos.map(photo => `images/photos/${ photo.file }`));
 })
 
 // Constant Elements
