@@ -247,6 +247,7 @@ const photos = [
 		'orientation': orientations.PORTRAIT,
 	},
 ];
+window.photos = photos;
 
 // Constant Elements
 const $grid = document.querySelector('.grid');
