@@ -337,15 +337,20 @@ function createPhotoElement(photo) {
 		$gridItem.dataset.width = '2';
 	}
 
+
+	const $gridItemContent = document.createElement('div');
+	$gridItemContent.classList.add('grid-item-content');
+	$gridItem.appendChild($gridItemContent);
+
 	const $gridItemPhoto = document.createElement('img');
 	$gridItemPhoto.src = `images/photos/${ photo.file }`;
 	$gridItemPhoto.alt = photo.description;
 	$gridItemPhoto.classList.add('grid-item-photo');
-	$gridItem.appendChild($gridItemPhoto);
+	$gridItemContent.appendChild($gridItemPhoto);
 
 	const $photoOverlay = document.createElement('div');
 	$photoOverlay.classList.add('photo-overlay');
-	$gridItem.appendChild($photoOverlay);
+	$gridItemContent.appendChild($photoOverlay);
 
 	const $photoOverlayText = document.createElement('div');
 	$photoOverlayText.classList.add('photo-overlay-text');

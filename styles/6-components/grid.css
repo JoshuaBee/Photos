@@ -17,9 +17,14 @@
 	visibility: hidden;
 }
 
-.grid-item-photo {
+.grid-item-content {
 	margin: 5px;
-	width: calc(100% - 10px);
+	position: relative;
+}
+
+.grid-item-photo {
+	display: block;
+	width: 100%;
 }
 
 .photo-overlay {
