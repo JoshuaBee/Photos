@@ -1,6 +1,7 @@
 const orientations = {
 	PORTRAIT: 1,
-	LANDSCAPE: 2
+	LANDSCAPE: 2,
+	SQUARE: 3
 };
 Object.freeze(orientations);
 
@@ -333,10 +334,9 @@ function createPhotoElement(photo) {
 	const $gridItem = document.createElement('div');
 	$gridItem.ariaHidden = true;
 	$gridItem.classList.add('grid-item');
-	if (photo.orientation === orientations.LANDSCAPE) {
+	if (photo.orientation === orientations.LANDSCAPE || photo.orientation === orientations.SQUARE) {
 		$gridItem.dataset.width = '2';
 	}
-
 
 	const $gridItemContent = document.createElement('div');
 	$gridItemContent.classList.add('grid-item-content');
@@ -346,6 +346,18 @@ function createPhotoElement(photo) {
 	$gridItemPhoto.src = `images/photos/${ photo.file }`;
 	$gridItemPhoto.alt = photo.description;
 	$gridItemPhoto.classList.add('grid-item-photo');
+	if (photo.orientation === orientations.PORTRAIT) {
+		$gridItemPhoto.height = '333';
+		$gridItemPhoto.width = '250';
+	}
+	else if (photo.orientation === orientations.LANDSCAPE) {
+		$gridItemPhoto.height = '375';
+		$gridItemPhoto.width = '500';
+	}
+	else if (photo.orientation === orientations.SQUARE) {
+		$gridItemPhoto.height = '500';
+		$gridItemPhoto.width = '500';
+	}
 	$gridItemContent.appendChild($gridItemPhoto);
 
 	const $photoOverlay = document.createElement('div');
