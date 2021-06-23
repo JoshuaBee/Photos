@@ -1,4 +1,4 @@
-const version = "1.12";
+const version = "1.13";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -253,15 +253,6 @@ const photos = [
 photos.sort((a, b) => {
 	return new Date(b.date) - new Date(a.date);
 });
-
-// Preload first 5 photos
-photos.slice(0, 5).forEach(photo => {
-	const $link = document.createElement('link');
-	$link.rel = 'preload';
-	$link.as = 'image';
-	$link.href = `images/photos/${ photo.file }`;
-	document.querySelector('head').appendChild($link);
-})
 
 caches.open(cacheName).then(cache => {
 	return cache.addAll(photos.map(photo => `images/photos/${ photo.file }`));
