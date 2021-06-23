@@ -1,4 +1,4 @@
-const version = "1.14";
+const version = "1.15";
 const cacheName = `jb-${ version }`;
 
 self.addEventListener("install", e => {
@@ -20,6 +20,7 @@ self.addEventListener("install", e => {
 				"/images/logos/logo-512.svg",
 				"/scripts/main.js",
 				"/styles/1-settings/color.css",
+				"/styles/2-tools/font.css",
 				"/styles/3-generic/reset.css",
 				"/styles/4-elements/body.css",
 				"/styles/4-elements/main.css",
@@ -27,7 +28,8 @@ self.addEventListener("install", e => {
 				"/styles/6-components/footer.css",
 				"/styles/6-components/grid.css",
 				"/styles/6-components/observer.css",
-				"/styles/6-components/snackbar.css"
+				"/styles/6-components/snackbar.css",
+				"/styles/7-utilities/visually-hide.css"
 			])
 			.then(() => self.skipWaiting());
 		})
