@@ -247,7 +247,19 @@ const photos = [
 		'orientation': orientations.PORTRAIT,
 	},
 ];
+photos.sort((a, b) => {
+	return new Date(b.date) - new Date(a.date);
+});
 window.photos = photos;
+
+// Preload first 5 photos
+photos.slice(0, 5).forEach(photo => {
+	const $link = document.createElement('link');
+	$link.rel = 'preload';
+	$link.as = 'image';
+	$link.href = `images/photos/${ photo.file }`;
+	document.querySelector('head').appendChild($link);
+})
 
 // Constant Elements
 const $grid = document.querySelector('.grid');
