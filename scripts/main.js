@@ -393,5 +393,5 @@ window.addEventListener('appinstalled', (event) => {
 	console.log('a2hs installed');
 	appInstalled = true;
 	appStandalone = true;
-	$snackbarAction.ariaHidden = true;
+	$snackbar.ariaHidden = true;
 });
