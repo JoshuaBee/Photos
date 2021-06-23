@@ -3,6 +3,20 @@
 //              Grid              //
 //                                //
 //--------------------------------*/
+.grid-wrapper {
+	padding: 0 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+	.grid-wrapper {
+        padding: 0 2rem;
+    }
+}
+
+.grid {
+	width: 100%;
+}
+
 .grid-item,
 .grid-sizer {
 	position: relative;
@@ -46,7 +60,7 @@
     white-space: nowrap;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 425px) {
 	.grid-item,
 	.grid-sizer {
 		width: calc(100% / 3);
@@ -55,13 +69,9 @@
 	.grid-item[data-width="2"] {
 		width: calc(2 * 100% / 3);
 	}
-
-	.photo-overlay-text {
-		font-size: 1.5rem;
-	}
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 768px) {
 	.grid-item,
 	.grid-sizer {
 		width: calc(100% / 4);
@@ -72,7 +82,7 @@
 	}
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1024px) {
 	.grid-item,
 	.grid-sizer {
 		width: calc(100% / 5);
@@ -83,7 +93,7 @@
 	}
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1280px) {
 	.grid-item,
 	.grid-sizer {
 		width: calc(100% / 6);
