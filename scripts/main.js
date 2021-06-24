@@ -1,4 +1,4 @@
-const version = "1.21";
+const version = "1.22";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -304,19 +304,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			$snackbar.ariaHidden = false;
 		}
 	});
-
-	// Ask the user to subscribe after 5s
-	setTimeout(function(){
-		if ('Notification' in window && navigator.serviceWorker) {
-			if (Notification.permission === "granted") {
-				/* The user has previously accepted push. */
-			} else if (Notification.permission === "blocked") {
-				/* the user has previously denied push. Can't reprompt. */
-			} else {
-				subscribeUser();
-			}
-		}
-	}, 5000);
 });
 
 function loadPhotos() {
@@ -398,44 +385,6 @@ function createPhotoElement(photo) {
 
 	$observer.insertAdjacentElement('beforebegin', $gridItem);
 	$gridItems.push($grid);
-}
-
-function subscribeUser() {
-	if ('serviceWorker' in navigator) {
-		navigator.serviceWorker.ready.then(function(registration) {
-
-			registration.pushManager.subscribe({
-				userVisibleOnly: true,
-				applicationServerKey: urlBase64ToUint8Array('AAAAUh1Kzwg:APA91bGgOfyPajR2g47Ai96jxyiGU9YcILvWiUx7txKGQA1Hl-zc-kcQYPsthDtHL4KrkfA2LJIm4rEDptPyoqYhZOfho9rqha6VLBY6KaSAdvL8ymNOGQ7R_DtvwxNQw1iKwSoVmbLQ')
-			}).then(function(subscription) {
-				console.log('Endpoint URL: ', subscription.endpoint);
-			}).catch(function(e) {
-				if (Notification.permission === 'denied') {
-					console.warn('Permission for notifications was denied');
-				} else {
-					console.error('Unable to subscribe to push', e);
-				}
-			});
-		})
-	}
-}
-
-// Web-Push
-// Public base64 to Uint
-// https://gist.github.com/Klerith/80abd742d726dd587f4bd5d6a0ab26b6
-function urlBase64ToUint8Array(base64String) {
-    var padding = '='.repeat((4 - base64String.length % 4) % 4);
-    var base64 = (base64String + padding)
-        .replace(/\-/g, '+')
-        .replace(/_/g, '/');
-
-    var rawData = window.atob(base64);
-    var outputArray = new Uint8Array(rawData.length);
-
-    for (var i = 0; i < rawData.length; ++i) {
-        outputArray[i] = rawData.charCodeAt(i);
-    }
-    return outputArray;
 }
 
 // https://developers.google.com/web/ilt/pwa/lab-offline-quickstart#52_activating_the_install_prompt
