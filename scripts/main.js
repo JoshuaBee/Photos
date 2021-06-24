@@ -1,4 +1,4 @@
-const version = "1.19";
+const version = "1.20";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -304,7 +304,38 @@ document.addEventListener('DOMContentLoaded', () => {
 			$snackbar.ariaHidden = false;
 		}
 
-		subscribeUser();
+		if ('Notification' in window && navigator.serviceWorker) {
+			if (Notification.permission === "granted") {
+				navigator.serviceWorker.getRegistration().then(function(registration) {
+					var options = {
+						body: 'Here is a notification body!',
+						icon: 'images/example.png',
+						vibrate: [100, 50, 100],
+						data: {
+							dateOfArrival: Date.now(),
+							primaryKey: 1
+						},
+						actions: [
+							{
+								action: 'explore',
+								title: 'Explore this new world',
+								icon: 'images/checkmark.png'
+							},
+							{
+								action: 'close',
+								title: 'Close notification',
+								icon: 'images/xmark.png'
+							},
+						]
+					};
+					registration.showNotification('Hello world!', options);
+				});
+			} else if (Notification.permission === "blocked") {
+				/* the user has previously denied push. Can't reprompt. */
+			} else {
+				subscribeUser();
+			}
+		}
 	})
 });
 
@@ -395,7 +426,8 @@ function subscribeUser() {
 		navigator.serviceWorker.ready.then(function(registration) {
 
 			registration.pushManager.subscribe({
-				userVisibleOnly: true
+				userVisibleOnly: true,
+				applicationServerKey: urlBase64ToUint8Array('AAAAUh1Kzwg:APA91bGgOfyPajR2g47Ai96jxyiGU9YcILvWiUx7txKGQA1Hl-zc-kcQYPsthDtHL4KrkfA2LJIm4rEDptPyoqYhZOfho9rqha6VLBY6KaSAdvL8ymNOGQ7R_DtvwxNQw1iKwSoVmbLQ')
 			}).then(function(subscription) {
 				console.log('Endpoint URL: ', subscription.endpoint);
 			}).catch(function(e) {
@@ -407,6 +439,24 @@ function subscribeUser() {
 			});
 		})
 	}
+}
+
+// Web-Push
+// Public base64 to Uint
+// https://gist.github.com/Klerith/80abd742d726dd587f4bd5d6a0ab26b6
+function urlBase64ToUint8Array(base64String) {
+    var padding = '='.repeat((4 - base64String.length % 4) % 4);
+    var base64 = (base64String + padding)
+        .replace(/\-/g, '+')
+        .replace(/_/g, '/');
+
+    var rawData = window.atob(base64);
+    var outputArray = new Uint8Array(rawData.length);
+
+    for (var i = 0; i < rawData.length; ++i) {
+        outputArray[i] = rawData.charCodeAt(i);
+    }
+    return outputArray;
 }
 
 // https://developers.google.com/web/ilt/pwa/lab-offline-quickstart#52_activating_the_install_prompt
