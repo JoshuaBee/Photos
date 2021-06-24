@@ -1,4 +1,4 @@
-const version = "1.18";
+const version = "1.19";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -303,6 +303,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!appInstalled && !appStandalone && snackbarOpen) {
 			$snackbar.ariaHidden = false;
 		}
+
+		subscribeUser();
 	})
 });
 

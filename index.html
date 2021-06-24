@@ -94,7 +94,7 @@
 				console.log('Service worker registration successful, scope is:', registration.scope);
 
 				registration.pushManager.getSubscription().then(function(subscription) {
-					if (sub === null) {
+					if (subscription === null) {
 						// Update UI to ask user to register for Push
 						console.log('Not subscribed to push service!');
 					} else {
