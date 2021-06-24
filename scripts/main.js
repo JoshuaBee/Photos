@@ -1,4 +1,4 @@
-const version = "1.20";
+const version = "1.21";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -303,40 +303,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!appInstalled && !appStandalone && snackbarOpen) {
 			$snackbar.ariaHidden = false;
 		}
+	});
 
+	// Ask the user to subscribe after 5s
+	setTimeout(function(){
 		if ('Notification' in window && navigator.serviceWorker) {
 			if (Notification.permission === "granted") {
-				navigator.serviceWorker.getRegistration().then(function(registration) {
-					var options = {
-						body: 'Here is a notification body!',
-						icon: 'images/example.png',
-						vibrate: [100, 50, 100],
-						data: {
-							dateOfArrival: Date.now(),
-							primaryKey: 1
-						},
-						actions: [
-							{
-								action: 'explore',
-								title: 'Explore this new world',
-								icon: 'images/checkmark.png'
-							},
-							{
-								action: 'close',
-								title: 'Close notification',
-								icon: 'images/xmark.png'
-							},
-						]
-					};
-					registration.showNotification('Hello world!', options);
-				});
+				/* The user has previously accepted push. */
 			} else if (Notification.permission === "blocked") {
 				/* the user has previously denied push. Can't reprompt. */
 			} else {
 				subscribeUser();
 			}
 		}
-	})
+	}, 5000);
 });
 
 function loadPhotos() {
@@ -416,7 +396,6 @@ function createPhotoElement(photo) {
 	$photoOverlayText.innerHTML = new Date(photo.date).toDateString();
 	$photoOverlay.appendChild($photoOverlayText);
 
-	//$grid.appendChild($gridItem);
 	$observer.insertAdjacentElement('beforebegin', $gridItem);
 	$gridItems.push($grid);
 }

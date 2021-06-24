@@ -1,4 +1,4 @@
-const version = "1.20";
+const version = "1.21";
 const cacheName = `jb-${ version }`;
 
 self.addEventListener("install", e => {
@@ -63,7 +63,7 @@ self.addEventListener('push', function(e) {
   
 	var options = {
 		body: body,
-		icon: 'images/notification-flat.png',
+		icon: 'images/logos/logo-192.png',
 		vibrate: [100, 50, 100],
 		data: {
 			dateOfArrival: Date.now(),
@@ -71,14 +71,14 @@ self.addEventListener('push', function(e) {
 		},
 		actions: [
 			{
-				action: 'explore',
-				title: 'Explore this new world',
-				icon: 'images/checkmark.png'
+				action: 'view',
+				title: 'View new photos',
+				icon: 'images/icons/check_black_24dp.png'
 			},
 			{
 				action: 'close',
-				title: 'I don\'t want any of this',
-				icon: 'images/xmark.png'
+				title: 'Don\'t view new photos',
+				icon: 'images/icons/close_black_24dp.png'
 			},
 		]
 	};
