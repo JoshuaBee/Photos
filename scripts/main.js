@@ -1,4 +1,4 @@
-const version = "1.16";
+const version = "1.17";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -281,12 +281,10 @@ let appInstalled = true
 let appStandalone = false;
 let currentPage = 1;
 let deferredPrompt;
+let firstLoad = true;
 let snackbarOpen = true;
 
 document.addEventListener('DOMContentLoaded', () => {
-
-	let observer = new IntersectionObserver(loadMorePhotos, {});
-	observer.observe($observer);
 
 	loadPhotos();
 
@@ -321,6 +319,12 @@ function loadPhotos() {
 		});
 
 		showPhotos();
+
+		if (firstLoad) {
+			firstLoad = false;
+			let observer = new IntersectionObserver(loadMorePhotos, {});
+			observer.observe($observer);
+		}
 	});
 }
 
