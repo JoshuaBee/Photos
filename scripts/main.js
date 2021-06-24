@@ -1,4 +1,4 @@
-const version = "1.22";
+const version = "1.23";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -318,8 +318,6 @@ function loadPhotos() {
 			percentPosition: true
 		});
 
-		showPhotos();
-
 		if (firstLoad) {
 			firstLoad = false;
 			let observer = new IntersectionObserver(loadMorePhotos, {});
@@ -337,16 +335,8 @@ function loadMorePhotos(entries, observer) {
     });
 }
 
-function showPhotos() {
-	let $photos = $grid.querySelectorAll('.grid-item[aria-hidden="true"]');
-	$photos.forEach($photo => {
-		$photo.ariaHidden = false;
-	});
-}
-
 function createPhotoElement(photo) {
 	const $gridItem = document.createElement('div');
-	$gridItem.ariaHidden = true;
 	$gridItem.classList.add('grid-item');
 	if (photo.orientation === orientations.LANDSCAPE || photo.orientation === orientations.SQUARE) {
 		$gridItem.dataset.width = '2';
