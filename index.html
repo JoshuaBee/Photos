@@ -92,6 +92,16 @@
 			  navigator.serviceWorker.register('/service-worker.js')
 			  .then(function(registration) {
 				console.log('Service worker registration successful, scope is:', registration.scope);
+
+				registration.pushManager.getSubscription().then(function(subscription) {
+					if (sub === null) {
+						// Update UI to ask user to register for Push
+						console.log('Not subscribed to push service!');
+					} else {
+						// We have a subscription, update the database
+						console.log('Subscription object: ', subscription);
+					}
+				});
 			  })
 			  .catch(function(error) {
 				console.log('Service worker registration failed, error:', error);

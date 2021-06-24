@@ -1,4 +1,4 @@
-const version = "1.17";
+const version = "1.18";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -386,6 +386,25 @@ function createPhotoElement(photo) {
 	//$grid.appendChild($gridItem);
 	$observer.insertAdjacentElement('beforebegin', $gridItem);
 	$gridItems.push($grid);
+}
+
+function subscribeUser() {
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.ready.then(function(registration) {
+
+			registration.pushManager.subscribe({
+				userVisibleOnly: true
+			}).then(function(subscription) {
+				console.log('Endpoint URL: ', subscription.endpoint);
+			}).catch(function(e) {
+				if (Notification.permission === 'denied') {
+					console.warn('Permission for notifications was denied');
+				} else {
+					console.error('Unable to subscribe to push', e);
+				}
+			});
+		})
+	}
 }
 
 // https://developers.google.com/web/ilt/pwa/lab-offline-quickstart#52_activating_the_install_prompt
