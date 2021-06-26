@@ -1,4 +1,4 @@
-const version = "1.44";
+const version = "1.45";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -19,6 +19,12 @@ const photos = [
 		'date': 'June 25, 2021',
 		'description': 'Enjoying the Isle of Wight ferry trip',
 		'file': '2021/06/25/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 24, 2021',
+		'description': 'Harry Potter cosplay',
+		'file': '2021/06/24/250.webp',
 		'orientation': orientations.PORTRAIT,
 	},
 	{
