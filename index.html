@@ -103,33 +103,15 @@
 			let installingWorker;
 			let refreshing = false;
 
-			function listenForWaitingServiceWorker(registration, callback) {
-				function awaitStateChange() {
-					registration.installing.addEventListener('statechange', function() {
-						if (this.state === 'installed') callback(registration);
-					});
-				}
-
-				if (!registration) return;
-				if (registration.waiting) return callback(registration);
-				if (registration.installing) awaitStateChange();
-				registration.onupdatefound = awaitStateChange;
-			}
-
-			function promptUserToRefresh(registration) {
-				$updateSnackbar.ariaHidden = false;
-				$updateSnackbarAction.addEventListener('click', function(){
-					registration.postMessage({ action: 'skipWaiting' });
-				});
-			}
+			$updateSnackbarAction.addEventListener('click', function(){
+				installingWorker.postMessage({ action: 'skipWaiting' });
+			});
 
 			if ('serviceWorker' in navigator) {
 			  	navigator.serviceWorker
 					.register('/service-worker.js')
 					.then(registration => {
-						listenForWaitingServiceWorker(registration, promptUserToRefresh);
-
-						/*registration.onupdatefound = () => {
+						registration.onupdatefound = () => {
 							installingWorker = registration.installing;
 							if (installingWorker == null) {
 								return;
@@ -141,7 +123,7 @@
 									};
 								}
 							};
-						};*/
+						};
 
 						console.log('Service worker registration successful, scope is:', registration.scope);
 					})
@@ -149,11 +131,11 @@
 						console.log('Service worker registration failed, error:', error);
 					});
 				
-				/*navigator.serviceWorker.addEventListener('controllerchange', function () {
+				navigator.serviceWorker.addEventListener('controllerchange', function () {
 					if (refreshing) return;
 					window.location.reload();
 					refreshing = true;
-				});*/
+				});
 			}
 		</script>
 	</body>
