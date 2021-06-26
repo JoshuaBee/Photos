@@ -104,7 +104,8 @@
 			let refreshing = false;
 
 			$updateSnackbarAction.addEventListener('click', function(){
-				installingWorker.postMessage({ action: 'skipWaiting' });
+				//installingWorker.postMessage({ action: 'skipWaiting' });
+				window.location.reload();
 			});
 
 			if ('serviceWorker' in navigator) {
@@ -131,11 +132,11 @@
 						console.log('Service worker registration failed, error:', error);
 					});
 				
-				navigator.serviceWorker.addEventListener('controllerchange', function () {
+				/*navigator.serviceWorker.addEventListener('controllerchange', function () {
 					if (refreshing) return;
 					window.location.reload();
 					refreshing = true;
-				});
+				});*/
 			}
 		</script>
 	</body>
