@@ -1,4 +1,4 @@
-const version = "1.43";
+const version = "1.44";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
