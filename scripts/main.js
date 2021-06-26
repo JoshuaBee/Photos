@@ -1,4 +1,4 @@
-const version = "1.30";
+const version = "1.31";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -398,6 +398,12 @@ const photos = [
 		'description': 'Meeting Philip the Fox',
 		'file': '2020/12/25/2-250.webp',
 		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'December 16, 2020',
+		'description': 'Annabelle sleeping with Daddy',
+		'file': '2020/12/16/500.webp',
+		'orientation': orientations.LANDSCAPE,
 	},
 ];
 photos.sort((a, b) => {
