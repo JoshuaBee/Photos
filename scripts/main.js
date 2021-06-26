@@ -1,4 +1,4 @@
-const version = "1.28";
+const version = "1.29";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -385,6 +385,18 @@ const photos = [
 		'date': 'December 27, 2020',
 		'description': 'Family walk selfie',
 		'file': '2020/12/27/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'December 25, 2020',
+		'description': 'Christmas morning',
+		'file': '2020/12/25/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'December 25, 2020',
+		'description': 'Meeting Philip the Fox',
+		'file': '2020/12/25/2-250.webp',
 		'orientation': orientations.PORTRAIT,
 	},
 ];
