@@ -1,4 +1,4 @@
-const version = "1.24";
+const version = "1.25";
 const cacheName = `jb-${ version }`;
 
 self.addEventListener("install", e => {
@@ -50,4 +50,10 @@ self.addEventListener("fetch", event => {
 			return response || fetch(event.request);
 		})
 	);
+});
+
+self.addEventListener('message', function (event) {
+	if (event.data.action === 'skipWaiting') {
+	  self.skipWaiting();
+	}
 });

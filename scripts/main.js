@@ -1,4 +1,4 @@
-const version = "1.24";
+const version = "1.25";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -381,9 +381,12 @@ caches.open(cacheName).then(cache => {
 // Constant Elements
 const $grid = document.querySelector('.grid');
 const $observer = document.querySelector('#observer');
-const $snackbar = document.querySelector('#snackbar');
-const $snackbarAction = $snackbar.querySelector('#snackbar-action');
-const $snackbarClose = $snackbar.querySelector('#snackbar-close');
+const $updateSnackbar = document.querySelector('#update-snackbar');
+const $updateSnackbarAction = $updateSnackbar.querySelector('.snackbar__action');
+const $updateSnackbarClose = $updateSnackbar.querySelector('.snackbar__close');
+const $installSnackbar = document.querySelector('#install-snackbar');
+const $installSnackbarAction = $installSnackbar.querySelector('.snackbar__action');
+const $installSnackbarClose = $installSnackbar.querySelector('.snackbar__close');
 
 // Variable Elements
 let $gridItems = [];
@@ -402,26 +405,32 @@ let appStandalone = false;
 let currentPage = 1;
 let deferredPrompt;
 let firstLoad = true;
-let snackbarOpen = true;
+let userScrolled = false;
 
 document.addEventListener('DOMContentLoaded', () => {
 
 	loadPhotos();
-
-	$snackbarClose.addEventListener('click', (event) => {
-		snackbarOpen = false;
-		$snackbar.ariaHidden = true;
-	});
 	
 	if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
 		console.log('display-mode is standalone');
 		appStandalone = true;
 	}
 
+	// Add events
+
+	$updateSnackbarClose.addEventListener('click', (event) => {
+		$updateSnackbar.ariaHidden = true;
+	});
+
+	$installSnackbarClose.addEventListener('click', (event) => {
+		$installSnackbar.ariaHidden = true;
+	});
+
 	window.addEventListener('scroll', () => {
-		// Open snackbar upon scroll
-		if (!appInstalled && !appStandalone && snackbarOpen) {
-			$snackbar.ariaHidden = false;
+		// Open snackbar upon first scroll
+		if (!appInstalled && !appStandalone && !userScrolled) {
+			userScrolled = true;
+			$installSnackbar.ariaHidden = false;
 		}
 	});
 });
@@ -510,7 +519,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
 	deferredPrompt = event;
 
 	// Attach the install prompt to a user gesture
-	$snackbarAction.addEventListener('click', (event) => {
+	$installSnackbarAction.addEventListener('click', (event) => {
 
 		// Show the prompt
 		deferredPrompt.prompt();
@@ -533,5 +542,5 @@ window.addEventListener('appinstalled', (event) => {
 	console.log('a2hs installed');
 	appInstalled = true;
 	appStandalone = true;
-	$snackbar.ariaHidden = true;
+	$installSnackbar.ariaHidden = true;
 });

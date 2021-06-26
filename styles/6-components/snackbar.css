@@ -5,7 +5,7 @@
 //--------------------------------*/
 .snackbar {
 	position: fixed;
-	transform: translate(-50%, -50%);
+	transform: translateX(-50%);
     left: 50%;
 	bottom: -5em;
 	min-width: 20em;
@@ -24,10 +24,23 @@
 	justify-content: center;
 	border-radius: 0.25em;
 	
-	transition: bottom 1s ease;
+	transition: bottom 1s ease, top 1s ease;
 
 	z-index: 6;
 	box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+}
+
+.snackbar[aria-hidden="false"] {
+	bottom: 1em;
+}
+
+.snackbar[data-position="top"] {
+	bottom: auto;
+	top: -5em;
+}
+
+.snackbar[aria-hidden="false"][data-position="top"] {
+	top: 1em;
 }
 
 .snackbar__text {
@@ -67,8 +80,4 @@
 
 .snackbar__close::before {
 	border-radius: 25em;
-}
-
-.snackbar[aria-hidden="false"] {
-	bottom: 1em;
 }
