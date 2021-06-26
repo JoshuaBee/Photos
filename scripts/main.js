@@ -1,4 +1,4 @@
-const version = "1.39";
+const version = "1.40";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -433,7 +433,7 @@ const photos = [
 		'date': 'December 1, 2020',
 		'description': 'Clinically depressed at the supermarket',
 		'file': '2020/12/01/500.webp',
-		'orientation': orientations.PORTRAIT,
+		'orientation': orientations.LANDSCAPE,
 	},
 ];
 photos.sort((a, b) => {
