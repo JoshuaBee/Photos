@@ -1,4 +1,4 @@
-const version = "1.23";
+const version = "1.24";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -10,10 +10,46 @@ Object.freeze(orientations);
 
 const photos = [
 	{
+		'date': 'June 26, 2021',
+		'description': 'If Jesus can walk on water, can he swim on land? Annabelle can!',
+		'file': '2021/06/26/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 25, 2021',
+		'description': 'Enjoying the Isle of Wight ferry trip',
+		'file': '2021/06/25/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 21, 2021',
+		'description': 'Excited by her pushchair',
+		'file': '2021/06/21/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
 		'date': 'June 20, 2021',
 		'description': 'Annabelle at East Park visiting the wallabies',
 		'file': '2021/06/20/500.webp',
 		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 16, 2021',
+		'description': 'Fun in the sun',
+		'file': '2021/06/16/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 15, 2021',
+		'description': 'Playing in a suitcase, why not?',
+		'file': '2021/06/15/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 14, 2021',
+		'description': 'Wet hair selfie!',
+		'file': '2021/06/14/250.webp',
+		'orientation': orientations.PORTRAIT,
 	},
 	{
 		'date': 'June 10, 2021',
@@ -22,15 +58,51 @@ const photos = [
 		'orientation': orientations.PORTRAIT,
 	},
 	{
+		'date': 'June 9, 2021',
+		'description': 'Enjoying a little bike ride',
+		'file': '2021/06/09/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 8, 2021',
+		'description': 'Sorry, tootz. We gotta go see a Tramp named Oline',
+		'file': '2021/06/08/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 7, 2021',
+		'description': 'The wheels on the bus go round and round...',
+		'file': '2021/06/07/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 5, 2021',
+		'description': 'Hornsea-lfie!',
+		'file': '2021/06/05/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 3, 2021',
+		'description': 'Overjoyed to see a Filbert truck',
+		'file': '2021/06/03/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
 		'date': 'June 3, 2021',
 		'description': 'Yoghurt hair selfie',
-		'file': '2021/06/03/250.webp',
+		'file': '2021/06/03/2-250.webp',
 		'orientation': orientations.PORTRAIT,
 	},
 	{
 		'date': 'May 31, 2021',
 		'description': 'Annabelle phone home!',
-		'file': '2021/05/31/250.webp',
+		'file': '2021/05/31/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 31, 2021',
+		'description': 'I came in like a wrecking ball!',
+		'file': '2021/05/31/2-250.webp',
 		'orientation': orientations.PORTRAIT,
 	},
 	{
@@ -41,14 +113,62 @@ const photos = [
 	},
 	{
 		'date': 'May 24, 2021',
+		'description': 'This is flying, it\'s falling with style',
+		'file': '2021/05/24/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 24, 2021',
 		'description': 'Getting stuck under the cot',
-		'file': '2021/05/24/250.webp',
+		'file': '2021/05/24/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 22, 2021',
+		'description': 'Visiting Pink Pig Farm 🐷',
+		'file': '2021/05/22/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 21, 2021',
+		'description': 'Cleaning up the house',
+		'file': '2021/05/21/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 17, 2021',
+		'description': 'Fun with Little Sebastian',
+		'file': '2021/05/17/1-250.webp',
 		'orientation': orientations.PORTRAIT,
 	},
 	{
 		'date': 'May 17, 2021',
 		'description': 'Annabelle and Daddy selfie',
-		'file': '2021/05/17/250.webp',
+		'file': '2021/05/17/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 12, 2021',
+		'description': 'Ready for some baking',
+		'file': '2021/05/12/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 12, 2021',
+		'description': 'Making some buzy bees',
+		'file': '2021/05/12/2-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'May 9, 2021',
+		'description': 'Who me?',
+		'file': '2021/05/09/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 9, 2021',
+		'description': 'Drying as Princess Elsa',
+		'file': '2021/05/09/2-250.webp',
 		'orientation': orientations.PORTRAIT,
 	},
 	{
