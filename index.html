@@ -100,9 +100,6 @@
 		<!-- Main Javascript -->
 		<script src="scripts/main.js"></script>
 		<script>
-			const $updateSnackbar = document.querySelector('#update-snackbar');
-			const $updateSnackbarAction = $updateSnackbar.querySelector('.snackbar__action');
-
 			let installingWorker;
 			let refreshing = false;
 
@@ -134,7 +131,7 @@
 						console.log('Service worker registration failed, error:', error);
 					});
 				
-					navigator.serviceWorker.addEventListener('controllerchange', function () {
+				navigator.serviceWorker.addEventListener('controllerchange', function () {
 					if (refreshing) return;
 					window.location.reload();
 					refreshing = true;

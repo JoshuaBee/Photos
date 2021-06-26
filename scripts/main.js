@@ -1,4 +1,4 @@
-const version = "1.26";
+const version = "1.27";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -373,6 +373,12 @@ const photos = [
 		'date': 'January 16, 2021',
 		'description': 'Playing in a puddle',
 		'file': '2021/01/16/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'January 1, 2021',
+		'description': 'Practising downward facing dog',
+		'file': '2021/01/01/250.webp',
 		'orientation': orientations.PORTRAIT,
 	},
 ];
