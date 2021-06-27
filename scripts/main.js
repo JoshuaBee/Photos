@@ -1,4 +1,4 @@
-const version = "1.45";
+const version = "1.46";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -28,6 +28,12 @@ const photos = [
 		'orientation': orientations.PORTRAIT,
 	},
 	{
+		'date': 'June 22, 2021',
+		'description': 'Playing in a suitcase, why not?',
+		'file': '2021/06/22/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
 		'date': 'June 21, 2021',
 		'description': 'Excited by her pushchair',
 		'file': '2021/06/21/250.webp',
@@ -44,12 +50,6 @@ const photos = [
 		'description': 'Fun in the sun',
 		'file': '2021/06/16/250.webp',
 		'orientation': orientations.PORTRAIT,
-	},
-	{
-		'date': 'June 15, 2021',
-		'description': 'Playing in a suitcase, why not?',
-		'file': '2021/06/15/500.webp',
-		'orientation': orientations.LANDSCAPE,
 	},
 	{
 		'date': 'June 14, 2021',
