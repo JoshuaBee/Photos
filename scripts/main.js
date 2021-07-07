@@ -1,4 +1,4 @@
-const version = "1.47";
+const version = "1.48";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -469,7 +469,7 @@ const msnry = new Masonry($grid, {
 	columnWidth: '.grid-sizer',
 	percentPosition: true
 });
-const photosPerPage = 10;
+const photosPerPage = 6;
 
 // Variables
 let appInstalled = true
@@ -535,7 +535,7 @@ function loadMorePhotos(entries, observer) {
 			currentPage++;
 			loadPhotos();
 		}
-    });
+	});
 }
 
 function showPhotos() {
