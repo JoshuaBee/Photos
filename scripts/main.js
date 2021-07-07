@@ -1,4 +1,4 @@
-const version = "1.46";
+const version = "1.47";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -519,6 +519,8 @@ function loadPhotos() {
 			percentPosition: true
 		});
 
+		showPhotos();
+
 		if (firstLoad) {
 			firstLoad = false;
 			let observer = new IntersectionObserver(loadMorePhotos, {});
@@ -536,8 +538,16 @@ function loadMorePhotos(entries, observer) {
     });
 }
 
+function showPhotos() {
+	const $gridItems = document.querySelectorAll('div.grid-item[aria-hidden="true"]');
+	$gridItems.forEach($gridItem => {
+		$gridItem.ariaHidden = false;
+	});
+}
+
 function createPhotoElement(photo) {
 	const $gridItem = document.createElement('div');
+	$gridItem.ariaHidden = true;
 	$gridItem.classList.add('grid-item');
 	if (photo.orientation === orientations.LANDSCAPE || photo.orientation === orientations.SQUARE) {
 		$gridItem.dataset.width = '2';
