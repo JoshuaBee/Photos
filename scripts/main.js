@@ -1,4 +1,4 @@
-const version = "1.48";
+const version = "1.49";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -9,6 +9,114 @@ const orientations = {
 Object.freeze(orientations);
 
 const photos = [
+	{
+		'date': 'July 24, 2021',
+		'description': 'Practising for Annabelle\'s driving test',
+		'file': '2021/07/24/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 23, 2021',
+		'description': 'Lovely lunch in Colchester',
+		'file': '2021/07/23/500.gif',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 22, 2021',
+		'description': 'Getting a well earned lunch',
+		'file': '2021/07/22/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 19, 2021',
+		'description': 'Playing in the digger',
+		'file': '2021/07/19/4-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 19, 2021',
+		'description': 'Interesting ironing technique!',
+		'file': '2021/07/19/3-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 19, 2021',
+		'description': 'Firefighter Annabelle',
+		'file': '2021/07/19/2-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 19, 2021',
+		'description': 'Lovely afternoon tea',
+		'file': '2021/07/19/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 18, 2021',
+		'description': 'Practising for Ninja Warrior',
+		'file': '2021/07/18/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 17, 2021',
+		'description': 'Running with a controller, why not!',
+		'file': '2021/07/17/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 16, 2021',
+		'description': 'Row row row your pirate ship...',
+		'file': '2021/07/16/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 14, 2021',
+		'description': 'A refreshing cuppa after a long day',
+		'file': '2021/07/14/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 9, 2021',
+		'description': 'Taking Philbert to A&E',
+		'file': '2021/07/09/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 4, 2021',
+		'description': 'A very cautious cook',
+		'file': '2021/07/04/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 2, 2021',
+		'description': 'Tired after a long day of travelling',
+		'file': '2021/07/02/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 1, 2021',
+		'description': 'Such a comfy seat',
+		'file': '2021/07/01/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 30, 2021',
+		'description': 'First time playing minigolf',
+		'file': '2021/06/30/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 28, 2021',
+		'description': 'Visiting the meerkats',
+		'file': '2021/06/28/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 28, 2021',
+		'description': 'Swimming in the pool',
+		'file': '2021/06/28/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
 	{
 		'date': 'June 26, 2021',
 		'description': 'If Jesus can walk on water, can he swim on land? Annabelle can!',
