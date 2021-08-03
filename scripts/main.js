@@ -1,4 +1,4 @@
-const version = "1.49";
+const version = "1.50";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -9,6 +9,48 @@ const orientations = {
 Object.freeze(orientations);
 
 const photos = [
+	{
+		'date': 'August 2, 2021',
+		'description': 'Setting up our bunny rabbit picnic',
+		'file': '2021/08/02/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'August 1, 2021',
+		'description': 'Annabelle would rather eat a lemon than pizza',
+		'file': '2021/08/01/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 30, 2021',
+		'description': 'Excited to sit in a wheelchair',
+		'file': '2021/07/30/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 28, 2021',
+		'description': 'Seeing hail for the first time',
+		'file': '2021/07/28/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 28, 2021',
+		'description': 'Playing in the flower garden',
+		'file': '2021/07/28/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 26, 2021',
+		'description': 'Would you like your babyccino for on the floor or to go?',
+		'file': '2021/07/26/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 25, 2021',
+		'description': 'Have you been in an accident that wasn\'t your fault?',
+		'file': '2021/07/25/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
 	{
 		'date': 'July 24, 2021',
 		'description': 'Practising for Annabelle\'s driving test',
