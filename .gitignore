@@ -1,4 +1,6 @@
 
 *.db
 .DS_Store
+*/photos/**/*original.gif
 */photos/**/*original.jpg
+*/photos/**/*original.mp4
