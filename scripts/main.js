@@ -1,4 +1,4 @@
-const version = "1.62";
+const version = "1.63";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -241,8 +241,9 @@ const photos = [
 	{
 		'date': 'May 10, 2022',
 		'description': 'Practising forward rolls',
-		'file': '2022/05/10/250.gif',
+		'file': '2022/05/10/250.mp4',
 		'orientation': orientations.PORTRAIT,
+		'type': 'video',
 	},
 	{
 		'date': 'May 7, 2022',
@@ -1742,6 +1743,18 @@ function createPhotoElement(photo) {
 		$gridItemMedia.autoplay = true;
 		$gridItemMedia.loop = true;
 		$gridItemMedia.muted = true;
+		if (photo.orientation === orientations.PORTRAIT) {
+			$gridItemMedia.height = '446';
+			$gridItemMedia.width = '250';
+		}
+		else if (photo.orientation === orientations.LANDSCAPE) {
+			$gridItemMedia.height = '282';
+			$gridItemMedia.width = '500';
+		}
+		else if (photo.orientation === orientations.SQUARE) {
+			$gridItemMedia.height = '500';
+			$gridItemMedia.width = '500';
+		}
 
 		const $gridItemVideoSource = document.createElement('source');
 		$gridItemVideoSource.src = `images/photos/${ photo.file }`;
@@ -1751,21 +1764,21 @@ function createPhotoElement(photo) {
 		$gridItemMedia = document.createElement('img');
 		$gridItemMedia.src = `images/photos/${ photo.file }`;
 		$gridItemMedia.alt = photo.description;
+		if (photo.orientation === orientations.PORTRAIT) {
+			$gridItemMedia.height = '333';
+			$gridItemMedia.width = '250';
+		}
+		else if (photo.orientation === orientations.LANDSCAPE) {
+			$gridItemMedia.height = '375';
+			$gridItemMedia.width = '500';
+		}
+		else if (photo.orientation === orientations.SQUARE) {
+			$gridItemMedia.height = '500';
+			$gridItemMedia.width = '500';
+		}
 	}
 
 	$gridItemMedia.classList.add('grid-item-photo');
-	if (photo.orientation === orientations.PORTRAIT) {
-		$gridItemMedia.height = '333';
-		$gridItemMedia.width = '250';
-	}
-	else if (photo.orientation === orientations.LANDSCAPE) {
-		$gridItemMedia.height = '375';
-		$gridItemMedia.width = '500';
-	}
-	else if (photo.orientation === orientations.SQUARE) {
-		$gridItemMedia.height = '500';
-		$gridItemMedia.width = '500';
-	}
 	$gridItemContent.appendChild($gridItemMedia);
 
 	const $photoOverlay = document.createElement('div');

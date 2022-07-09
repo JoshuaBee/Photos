@@ -14,7 +14,7 @@ Steps to add new MP4s:
 * Store the videos in the appropriate folder structure of images/photos/{year}/{month}/{day}.
 * Rename the video to `original`, or `1-original`, `2-original` etc. if there is more than 1.
 * Go to [EZGIF](https://ezgif.com/video-to-gif) and upload the video.
-* Resize the video to `250x333` for portrait, and `500x375` for landscape.
+* Resize the video to `250x446` for 9:16, `250x333` for 3:4, `500x282` for 16:9, and `500x375` for 4:3.
 * Download the video.
 
 Steps to add new GIFs:
