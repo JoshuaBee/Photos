@@ -1,4 +1,4 @@
-const version = "1.57";
+const version = "1.58";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -1623,10 +1623,6 @@ photos.sort((a, b) => {
 	return new Date(b.date) - new Date(a.date);
 });
 
-caches.open(cacheName).then(cache => {
-	return cache.addAll(photos.map(photo => `images/photos/${ photo.file }`));
-})
-
 // Constant Elements
 const $grid = document.querySelector('.grid');
 const $observer = document.querySelector('#observer');
@@ -1685,7 +1681,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadPhotos() {
-	photos.slice(Math.max((currentPage - 1) * photosPerPage, 0), currentPage * photosPerPage).forEach(photo => {
+	const pagePhotos = photos.slice(Math.max((currentPage - 1) * photosPerPage, 0), currentPage * photosPerPage);
+
+	caches.open(cacheName).then(cache => {
+		return cache.addAll(pagePhotos.map(photo => `images/photos/${ photo.file }`));
+	});
+	
+	pagePhotos.forEach(photo => {
 		createPhotoElement(photo);
 	});
 
