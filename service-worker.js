@@ -1,4 +1,4 @@
-const version = "1.59";
+const version = "1.60";
 const cacheName = `jb-${ version }`;
 
 self.addEventListener("install", e => {
@@ -42,17 +42,17 @@ self.addEventListener("activate", event => {
 });
 
 self.addEventListener("fetch", event => {
-	let fetch = true;
+	let fnd = true;
 
 	if (event.request.url.includes('/images/photos/')) {
 		if (event.request.url.includes('/2022/07/')) {
-			fetch = true;
+			fnd = true;
 		} else {
-			fetch = false;
+			fnd = false;
 		}
 	}
 
-	if (fetch) {
+	if (fnd) {
 		// console.log('Service worker fetching:', event.request.url);
 		event.respondWith(
 			caches.open(cacheName)
