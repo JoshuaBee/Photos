@@ -1,4 +1,4 @@
-const version = "1.58";
+const version = "1.59";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -1686,7 +1686,7 @@ function loadPhotos() {
 	caches.open(cacheName).then(cache => {
 		return cache.addAll(pagePhotos.map(photo => `images/photos/${ photo.file }`));
 	});
-	
+
 	pagePhotos.forEach(photo => {
 		createPhotoElement(photo);
 	});
