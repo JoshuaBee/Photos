@@ -1,4 +1,4 @@
-const version = "1.53";
+const version = "1.54";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -9,6 +9,265 @@ const orientations = {
 Object.freeze(orientations);
 
 const photos = [
+	{
+		'date': 'July 8, 2022',
+		'description': '',
+		'file': '2022/07/08/2-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 8, 2022',
+		'description': '',
+		'file': '2022/07/08/1-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 6, 2022',
+		'description': '',
+		'file': '2022/07/06/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 4, 2022',
+		'description': '',
+		'file': '2022/07/04/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 3, 2022',
+		'description': '',
+		'file': '2022/07/03/3-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'July 3, 2022',
+		'description': '',
+		'file': '2022/07/03/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 3, 2022',
+		'description': '',
+		'file': '2022/07/03/1-250.mp4',
+		'orientation': orientations.PORTRAIT,
+		'type': 'video',
+	},
+	{
+		'date': 'July 2, 2022',
+		'description': '',
+		'file': '2022/07/02/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'July 2, 2022',
+		'description': '',
+		'file': '2022/07/02/1-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 30, 2022',
+		'description': '',
+		'file': '2022/06/30/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 25, 2022',
+		'description': '',
+		'file': '2022/06/25/3-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 25, 2022',
+		'description': '',
+		'file': '2022/06/25/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 25, 2022',
+		'description': '',
+		'file': '2022/06/25/1-500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 23, 2022',
+		'description': '',
+		'file': '2022/06/23/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 22, 2022',
+		'description': '',
+		'file': '2022/06/22/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'June 18, 2022',
+		'description': '',
+		'file': '2022/06/18/3-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 18, 2022',
+		'description': '',
+		'file': '2022/06/18/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 18, 2022',
+		'description': '',
+		'file': '2022/06/18/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 16, 2022',
+		'description': '',
+		'file': '2022/06/16/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 12, 2022',
+		'description': '',
+		'file': '2022/06/12/3-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 12, 2022',
+		'description': '',
+		'file': '2022/06/12/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 12, 2022',
+		'description': '',
+		'file': '2022/06/12/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 10, 2022',
+		'description': '',
+		'file': '2022/06/10/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 10, 2022',
+		'description': '',
+		'file': '2022/06/10/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'June 2, 2022',
+		'description': '',
+		'file': '2022/06/02/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'May 30, 2022',
+		'description': '',
+		'file': '2022/05/30/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 29, 2022',
+		'description': '',
+		'file': '2022/05/29/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 27, 2022',
+		'description': '',
+		'file': '2022/05/27/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 23, 2022',
+		'description': '',
+		'file': '2022/05/23/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 22, 2022',
+		'description': '',
+		'file': '2022/05/22/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 20, 2022',
+		'description': '',
+		'file': '2022/05/20/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'May 19, 2022',
+		'description': '',
+		'file': '2022/05/19/500.webp',
+		'orientation': orientations.LANDSCAPE,
+	},
+	{
+		'date': 'May 18, 2022',
+		'description': '',
+		'file': '2022/05/18/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 15, 2022',
+		'description': '',
+		'file': '2022/05/15/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 15, 2022',
+		'description': '',
+		'file': '2022/05/15/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 13, 2022',
+		'description': '',
+		'file': '2022/05/13/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 13, 2022',
+		'description': '',
+		'file': '2022/05/13/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 11, 2022',
+		'description': '',
+		'file': '2022/05/11/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 10, 2022',
+		'description': '',
+		'file': '2022/05/10/250.gif',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 7, 2022',
+		'description': '',
+		'file': '2022/05/07/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 6, 2022',
+		'description': '',
+		'file': '2022/05/06/2-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 6, 2022',
+		'description': '',
+		'file': '2022/05/06/1-250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
+	{
+		'date': 'May 5, 2022',
+		'description': '',
+		'file': '2022/05/05/250.webp',
+		'orientation': orientations.PORTRAIT,
+	},
 	{
 		'date': 'May 4, 2022',
 		'description': 'Harry Kane-abelle',
@@ -1475,23 +1734,37 @@ function createPhotoElement(photo) {
 	$gridItemContent.classList.add('grid-item-content');
 	$gridItem.appendChild($gridItemContent);
 
-	const $gridItemPhoto = document.createElement('img');
-	$gridItemPhoto.src = `images/photos/${ photo.file }`;
-	$gridItemPhoto.alt = photo.description;
-	$gridItemPhoto.classList.add('grid-item-photo');
+	let $gridItemMedia;
+	if (photo.type === 'video') {
+		$gridItemMedia = document.createElement('video');
+		$gridItemMedia.autoplay = true;
+		$gridItemMedia.loop = true;
+		$gridItemMedia.muted = true;
+
+		const $gridItemVideoSource = document.createElement('source');
+		$gridItemVideoSource.src = `images/photos/${ photo.file }`;
+		$gridItemVideoSource.type = 'video/mp4';
+		$gridItemMedia.appendChild($gridItemVideoSource);
+	} else {
+		$gridItemMedia = document.createElement('img');
+		$gridItemMedia.src = `images/photos/${ photo.file }`;
+		$gridItemMedia.alt = photo.description;
+	}
+	
+	$gridItemMedia.classList.add('grid-item-photo');
 	if (photo.orientation === orientations.PORTRAIT) {
-		$gridItemPhoto.height = '333';
-		$gridItemPhoto.width = '250';
+		$gridItemMedia.height = '333';
+		$gridItemMedia.width = '250';
 	}
 	else if (photo.orientation === orientations.LANDSCAPE) {
-		$gridItemPhoto.height = '375';
-		$gridItemPhoto.width = '500';
+		$gridItemMedia.height = '375';
+		$gridItemMedia.width = '500';
 	}
 	else if (photo.orientation === orientations.SQUARE) {
-		$gridItemPhoto.height = '500';
-		$gridItemPhoto.width = '500';
+		$gridItemMedia.height = '500';
+		$gridItemMedia.width = '500';
 	}
-	$gridItemContent.appendChild($gridItemPhoto);
+	$gridItemContent.appendChild($gridItemMedia);
 
 	const $photoOverlay = document.createElement('div');
 	$photoOverlay.classList.add('photo-overlay');
