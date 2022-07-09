@@ -1,4 +1,4 @@
-const version = "1.56";
+const version = "1.57";
 const cacheName = `jb-${ version }`;
 
 self.addEventListener("install", e => {
@@ -42,25 +42,24 @@ self.addEventListener("activate", event => {
 });
 
 self.addEventListener("fetch", event => {
-	console.log('Service worker fetching:', event.request.url);
-	event.respondWith(
-		caches.open(cacheName)
-		.then(cache => cache.match(event.request, {ignoreSearch: true}))
-		.then(response => {
-			let test = true;
+	let test = true;
 
-			if (event.request.url.includes('/images/photos/')) {
-				if ((event.request.url.includes('/2022/07/') || event.request.url.includes('/2022/06/'))) {
-					test = true;
-				} else {
-					test = false;
-				}
-			}
+	if (event.request.url.includes('/images/photos/')) {
+		if ((event.request.url.includes('/2022/07/') || event.request.url.includes('/2022/06/'))) {
+			test = true;
+		} else {
+			test = false;
+		}
+	}
 
-			if (test) {
+	if (test) {
+		console.log('Service worker fetching:', event.request.url);
+		event.respondWith(
+			caches.open(cacheName)
+			.then(cache => cache.match(event.request, {ignoreSearch: true}))
+			.then(response => {
 				return response || fetch(event.request);
-			}
-			return;
-		})
-	);
+			})
+		)
+	}
 });
