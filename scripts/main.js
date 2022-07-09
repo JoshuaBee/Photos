@@ -1,4 +1,4 @@
-const version = "1.63";
+const version = "1.64";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -12,13 +12,7 @@ const photos = [
 	{
 		'date': 'July 8, 2022',
 		'description': 'Relaxing on the Isle of Wight ferry',
-		'file': '2022/07/08/2-500.webp',
-		'orientation': orientations.LANDSCAPE,
-	},
-	{
-		'date': 'July 8, 2022',
-		'description': 'Bowley photo in the Isle of Wight',
-		'file': '2022/07/08/1-500.webp',
+		'file': '2022/07/08/500.webp',
 		'orientation': orientations.LANDSCAPE,
 	},
 	{
