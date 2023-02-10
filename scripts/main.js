@@ -10,6 +10,26 @@ Object.freeze(orientations);
 
 const photos = [
 	{
+		'date': 'July 10, 2022',
+		'description': 'Selfie on the beach',
+		'files': [
+			{
+				'file': '2022/07/10/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/07/10/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/07/10/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
 		'date': 'July 8, 2022',
 		'description': 'Relaxing on the Isle of Wight ferry',
 		'file': '2022/07/08/500.webp',
@@ -1679,7 +1699,13 @@ function loadPhotos() {
 	const pagePhotos = photos.slice(Math.max((currentPage - 1) * photosPerPage, 0), currentPage * photosPerPage);
 
 	caches.open(cacheName).then(cache => {
-		return cache.addAll(pagePhotos.map(photo => `images/photos/${ photo.file }`));
+		return cache.addAll(pagePhotos.map(photo => {
+			if (photo.type === 'picture') {
+				return `images/photos/${ photo.files[0].file }`;
+			} else {
+				return `images/photos/${ photo.file }`;
+			}
+		}));
 	});
 
 	pagePhotos.forEach(photo => {
@@ -1756,7 +1782,6 @@ function createPhotoElement(photo) {
 		$gridItemMedia.appendChild($gridItemVideoSource);
 	} else {
 		$gridItemMedia = document.createElement('img');
-		$gridItemMedia.src = `images/photos/${ photo.file }`;
 		$gridItemMedia.alt = photo.description;
 		if (photo.orientation === orientations.PORTRAIT) {
 			$gridItemMedia.height = '333';
@@ -1769,6 +1794,21 @@ function createPhotoElement(photo) {
 		else if (photo.orientation === orientations.SQUARE) {
 			$gridItemMedia.height = '500';
 			$gridItemMedia.width = '500';
+		}
+
+		if (photo.files && photo.files.length > 0) {
+			let srcset = '';
+			for (i = 0; i < photo.files.length; i++) {
+				srcset += `images/photos/${photo.files[i].file} ${i + 1}x`;
+				if (i < photo.files.length - 1) {
+					srcset+= ',';
+				}
+			}
+
+			$gridItemMedia.src = `images/photos/${ photo.files[0].file }`;
+			$gridItemMedia.srcset = srcset;
+		} else {
+			$gridItemMedia.src = `images/photos/${ photo.file }`;
 		}
 	}
 
