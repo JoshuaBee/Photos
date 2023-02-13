@@ -1,4 +1,4 @@
-const version = "1.64";
+const version = "1.65";
 const cacheName = `jb-${ version }`;
 
 const orientations = {
@@ -9,6 +9,620 @@ const orientations = {
 Object.freeze(orientations);
 
 const photos = [
+	{
+		'date': 'February 08, 2023',
+		'description': '',
+		'files': [
+			{
+				'file': '2023/02/08/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2023/02/08/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2023/02/08/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'January 29, 2023',
+		'description': '',
+		'files': [
+			{
+				'file': '2023/01/29/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2023/01/29/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2023/01/29/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'January 27, 2023',
+		'description': '',
+		'files': [
+			{
+				'file': '2023/01/27/500.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2023/01/27/1000.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2023/01/27/1500.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.LANDSCAPE,
+		'type': 'picture',
+	},
+	{
+		'date': 'January 23, 2023',
+		'description': '',
+		'file': '2023/01/23/250.mp4',
+		'orientation': orientations.PORTRAIT,
+		'type': 'video',
+	},
+	{
+		'date': 'January 14, 2023',
+		'description': '',
+		'files': [
+			{
+				'file': '2023/01/14/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2023/01/14/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2023/01/14/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'December 31, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/12/31/500.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/12/31/1000.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/12/31/1500.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.LANDSCAPE,
+		'type': 'picture',
+	},
+	{
+		'date': 'December 25, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/12/25/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/12/25/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/12/25/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'December 24, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/12/24/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/12/24/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/12/24/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'December 18, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/12/18/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/12/18/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/12/18/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'December 11, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/12/11/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/12/11/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/12/11/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'December 05, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/12/05/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/12/05/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/12/05/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'November 30, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/11/30/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/11/30/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/11/30/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'November 21, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/11/21/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/11/21/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/11/21/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'November 15, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/11/15/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/11/15/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/11/15/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'October 30, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/10/30/2-250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/10/30/2-500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/10/30/2-750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'October 30, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/10/30/1-250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/10/30/1-500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/10/30/1-750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'October 09, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/10/09/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/10/09/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/10/09/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'October 01, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/10/01/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/10/01/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/10/01/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'September 22, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/09/22/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/09/22/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/09/22/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'September 13, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/09/13/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/09/13/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/09/13/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'September 05, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/09/05/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/09/05/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/09/05/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'September 02, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/09/02/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/09/02/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/09/02/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'August 29, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/08/29/500.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/08/29/1000.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/08/29/1500.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.LANDSCAPE,
+		'type': 'picture',
+	},
+	{
+		'date': 'August 25, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/08/25/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/08/25/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/08/25/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'August 12, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/08/12/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/08/12/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/08/12/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'August 07, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/08/07/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/08/07/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/08/07/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'August 03, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/08/03/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/08/03/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/08/03/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'July 31, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/07/31/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/07/31/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/07/31/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'July 24, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/07/24/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/07/24/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/07/24/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'July 18, 2022',
+		'description': '',
+		'file': '2022/07/18/250.mp4',
+		'orientation': orientations.PORTRAIT,
+		'type': 'video',
+	},
+	{
+		'date': 'July 16, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/07/16/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/07/16/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/07/16/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
+	{
+		'date': 'July 12, 2022',
+		'description': '',
+		'files': [
+			{
+				'file': '2022/07/12/250.webp',
+				'resolution': '1x',
+			},
+			{
+				'file': '2022/07/12/500.webp',
+				'resolution': '2x',
+			},
+			{
+				'file': '2022/07/12/750.webp',
+				'resolution': '3x',
+			}
+		],
+		'orientation': orientations.PORTRAIT,
+		'type': 'picture',
+	},
 	{
 		'date': 'July 10, 2022',
 		'description': 'Selfie on the beach',
