@@ -1,0 +1,32 @@
+{
+  "background_color": "#DCA2FF",
+  "description": "🐝 Family Photos",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "images/logos/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logos/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "name": "🐝 Family Photos",
+  "screenshots" : [
+    {
+      "src": "images/screenshots/screenshot1.webp",
+      "sizes": "3360x1664",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "Homescreen of 🐝 Family Photos"
+    }
+  ],
+  "short_name": "🐝 Family Photos",
+  "start_url": "/",
+  "theme_color": "#DCA2FF"
+}

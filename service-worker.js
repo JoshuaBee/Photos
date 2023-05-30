@@ -1,4 +1,4 @@
-const version = "1.67";
+const version = "1.68";
 const cacheName = `jb-${ version }`;
 
 self.addEventListener("install", e => {
@@ -8,7 +8,7 @@ self.addEventListener("install", e => {
 			return cache.addAll([
 				"/",
 				"/index.html",
-				"/manifest.json",
+				"/manifest.webmanifest",
 				"/sitemap.xml",
 				"/images/logos/company-logo-192.png",
 				"/images/logos/company-logo-192.svg",
