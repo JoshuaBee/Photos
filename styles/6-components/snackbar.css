@@ -12,9 +12,7 @@
 	width: 50%;
 	min-height: 3em;
 	
-	background-color: #000;
 	background-color: var(--color-background);
-	color: #FFF;
 	color: var(--color-background-text);
 	
 	align-content: center;
@@ -54,13 +52,11 @@
 }
 
 .snackbar__actions .button {
-	color: #000;
-	color: var(--color-primary-text);
+	color: var(--color-primary-1);
 }
 
 .snackbar__actions .button::before {
-	background-color: #E0AAFF;
-	background-color: var(--color-primary);
+	background-color: var(--color-primary-1);
 }
 
 .snackbar__close {
@@ -74,7 +70,6 @@
     transform: translate(-50%, -50%);
     left: 50%;
 	top: 50%;
-	fill: #000;
 	fill: var(--color-primary-text);
 }
 

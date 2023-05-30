@@ -5,10 +5,8 @@
 //--------------------------------*/
 body {
 	align-items: center;
-	color: #FFF;
-	color: var(--color-background-text);
-	background-color: #10002B;
 	background-color: var(--color-background);
+	color: var(--color-background-text);
 	display: flex;
     flex-direction: column;
 	min-height: 100vh;

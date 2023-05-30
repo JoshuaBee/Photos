@@ -1,4 +1,4 @@
-const version = "1.66";
+const version = "1.67";
 const cacheName = `jb-${ version }`;
 
 self.addEventListener("install", e => {
@@ -25,7 +25,6 @@ self.addEventListener("install", e => {
 				"/styles/4-elements/body.css",
 				"/styles/4-elements/main.css",
 				"/styles/6-components/button.css",
-				"/styles/6-components/footer.css",
 				"/styles/6-components/grid.css",
 				"/styles/6-components/observer.css",
 				"/styles/6-components/snackbar.css",
